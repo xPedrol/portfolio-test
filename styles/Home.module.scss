@@ -1,0 +1,109 @@
+@use "../styles/Font.module" as *;
+@use "../styles/Breakpoints.module" as *;
+
+.mainBG {
+  overflow: hidden;
+  height: 92vh;
+  min-height: 500px;
+  background-image: url("../public/mainBg1.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  .headerContent {
+    display: flex;
+    align-items: center;
+  }
+
+  .headerContent .imgDiv img {
+    border-radius: 100%;
+    width: 300px;
+    height: 300px;
+  }
+
+  .headerText {
+    text-align: center;
+    animation-iteration-count: 1;
+    animation-name: headerText;
+    animation-duration: 1.5s;
+  }
+
+  .headerText > h1 {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+    @extend .silkscreen;
+    letter-spacing: 10px;
+    color: black;
+    font-size: 100px;
+  }
+
+  .headerText > p {
+    font-size: 20px;
+    max-width: 60vw;
+    margin: 0 auto;
+    @extend .poppins;
+  }
+
+  @include max-md {
+    .headerText > h1 {
+      font-size: 60px;
+    }
+    .headerText > p {
+      max-width: 90vw;
+    }
+  }
+  @include max-md {
+    .headerText > h1 {
+      font-size: 50px;
+    }
+    .headerText > p {
+      max-width: 90vw;
+      font-size: 17px;
+    }
+  }
+
+
+  .arrowDownIconDiv {
+    cursor: pointer;
+  }
+
+  .arrowDownIconDiv > * {
+    font-size: 30px;
+    animation-duration: 2s;
+    animation-name: arrow;
+    animation-iteration-count: infinite;
+  }
+
+}
+
+@keyframes arrow {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  75% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes headerText {
+  from {
+    margin-left: -20vw;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0;
+  }
+
+}
